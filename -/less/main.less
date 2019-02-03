@@ -1,0 +1,87 @@
+// head {
+@import "../../../js-jquery/ui/-/less/icons.less";
+
+@__nodeId__: ~"std_ui_tree__main";
+// }
+
+@nodeHeight: 28px;
+
+.@{__nodeId__}, #@{__nodeId__}__draggable {
+
+    .nodes {
+        margin: 1px 0 0;
+        background-color: #ffffff;
+        font-size: 13px;
+
+        &.draggable {
+            border: 2px solid #888888;
+        }
+    }
+
+    .node {
+        position: relative;
+        min-height: @nodeHeight;
+
+        .indent {
+            float: left;
+            height: @nodeHeight;
+
+            .icon {
+                float: right;
+                margin-top: (@nodeHeight - 16px) / 2;
+                margin-right: 5px;
+                width: 16px;
+                height: 16px;
+                background: url("images/icons_454545.png") 16px 16px;
+
+                &.e_arrow {
+                    .ui-icon-triangle-1-e;
+                }
+
+                &.se_arrow {
+                    .ui-icon-triangle-1-se;
+                }
+            }
+
+            &.clickable {
+                cursor: pointer;
+
+                &.hover {
+                    background-color: #eeeeee;
+                }
+            }
+        }
+
+        .control {
+
+        }
+
+        &.selected {
+            background-color: #ebebeb;
+            font-weight: bold;
+        }
+
+        &.droppable_active {
+
+        }
+
+        &.droppable_hover {
+            background-color: #3c8ac3;
+            color: #ffffff;
+        }
+
+        &.hover {
+
+        }
+    }
+
+    .sortable_placeholder {
+        margin-top: 1px;
+        border: 1px solid #e0e0e0;
+        background-color: #fcfcfc;
+    }
+
+    .ui-sortable-helper {
+        opacity: 0.8;
+    }
+}
