@@ -105,12 +105,12 @@ class Main extends InstanceController
 
         $isRootNode = $id == $this->rootNodeId;
 
-        if ($node && (!$isRootNode || $this->rootNodeVisible)) {
-            $v->assign([
-                           'NODE_ID'   => $id,
-                           'PARENT_ID' => $node ? $node->{$this->parentField} : '',
-                       ]);
+        $v->assign([
+                       'NODE_ID'   => $id,
+                       'PARENT_ID' => $node ? $node->{$this->parentField} : ''
+                   ]);
 
+        if ($node && (!$isRootNode || $this->rootNodeVisible)) {
             $nodeControlCall = $this->_call(\ewma\Data\Data::tokenize($this->nodeControl, [
                 '%model' => $node
             ]));
